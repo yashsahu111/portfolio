@@ -43,7 +43,7 @@
     }
   </script>
 
-  <!-- Custom Styling for Glassmorphism & Apple Theme -->
+  <!-- Custom Styling for Apple Dark Theme & Glassmorphism -->
   <style>
     body {
       background-color: #05050a;
@@ -112,15 +112,11 @@
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(255, 255, 255, 0.25);
     }
-
-    .drawer-transition {
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
   </style>
 </head>
 <body class="relative min-h-screen selection:bg-appleBlue/30 selection:text-white">
 
-  <!-- Ambient Light Background -->
+  <!-- Ambient Light Background Orbs -->
   <div class="fixed top-[-10%] left-[20%] w-[500px] h-[500px] bg-appleBlue/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
   <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] bg-applePurple/10 rounded-full blur-[160px] pointer-events-none z-0"></div>
   <div class="fixed bottom-[-10%] left-[30%] w-[500px] h-[500px] bg-appleCyan/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
@@ -147,25 +143,17 @@
             <i data-lucide="code-2" class="w-4 h-4 text-appleBlue"></i>
           </div>
         </div>
-        <span id="navBrandName" class="font-semibold text-lg tracking-tight text-white group-hover:text-appleBlue transition-colors">
+        <span class="font-semibold text-lg tracking-tight text-white group-hover:text-appleBlue transition-colors">
           Yash
         </span>
       </a>
 
       <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+      <nav class="flex items-center gap-8 text-sm font-medium text-zinc-400">
         <a href="#projects" class="hover:text-white transition-colors">Projects</a>
         <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </nav>
-
-      <!-- Actions -->
-      <div class="flex items-center gap-3">
-        <button id="openCustomizerBtn" class="glass-pill px-3.5 py-1.5 rounded-full text-xs font-medium text-zinc-200 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2 border border-white/10 hover:border-appleBlue/40">
-          <i data-lucide="sliders" class="w-3.5 h-3.5 text-appleBlue"></i>
-          <span>Edit Portfolio</span>
-        </button>
-      </div>
     </div>
   </header>
 
@@ -181,7 +169,7 @@
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
         </span>
-        <span id="heroStatusText">College Student & Web Developer</span>
+        <span>College Student & Web Developer</span>
       </div>
 
       <!-- Main Headline -->
@@ -190,7 +178,7 @@
       </h1>
 
       <!-- Bio Paragraph -->
-      <p id="heroBio" class="text-lg md:text-xl text-zinc-400 leading-relaxed font-normal max-w-2xl">
+      <p class="text-lg md:text-xl text-zinc-400 leading-relaxed font-normal max-w-2xl">
         I am a college student who loves building web applications. So far, I have developed 2 web projects focused on real-world use cases.
       </p>
 
@@ -203,7 +191,7 @@
         
         <button id="copyEmailBtn" class="glass-pill px-6 py-3 rounded-full text-zinc-200 font-medium text-sm hover:bg-white/10 hover:text-white transition-all flex items-center gap-2 border border-white/10">
           <i data-lucide="mail" class="w-4 h-4 text-appleBlue"></i>
-          <span id="emailBtnText">Copy Email</span>
+          <span>Copy Email</span>
         </button>
       </div>
     </section>
@@ -211,7 +199,7 @@
     <!-- WEB PROJECTS SHOWCASE SECTION -->
     <section id="projects" class="space-y-8 scroll-mt-24">
       
-      <!-- Section Header & Controls -->
+      <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2 border-b border-white/[0.08]">
         <div>
           <div class="flex items-center gap-3">
@@ -236,14 +224,12 @@
           </div>
 
           <div id="categoryFilterContainer" class="flex items-center gap-1 glass-pill p-1 rounded-full overflow-x-auto">
-            <!-- Filter buttons dynamically rendered -->
           </div>
         </div>
       </div>
 
       <!-- Projects Grid -->
       <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Rendered via JS -->
       </div>
 
       <!-- Empty State -->
@@ -269,7 +255,7 @@
         <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
           A college student building web applications.
         </h2>
-        <p id="aboutBioExtended" class="text-zinc-300 text-sm leading-relaxed">
+        <p class="text-zinc-300 text-sm leading-relaxed">
           I am a college student passionate about web development. Currently, I have developed 2 projects: Roomzy, a platform to find student housing without brokerage, and Email Threat Detection, a web security tool for analyzing email threats. I aim to create simple, clean, and useful websites.
         </p>
         <div class="pt-2 flex flex-wrap gap-4 text-xs font-medium text-zinc-400">
@@ -296,7 +282,7 @@
     <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
         <div class="flex items-center gap-2 mb-1">
-          <span id="footerName" class="font-semibold text-white">Yash</span>
+          <span class="font-semibold text-white">Yash</span>
           <span class="text-zinc-600">•</span>
           <span class="text-xs text-zinc-400">Web Developer Portfolio</span>
         </div>
@@ -370,99 +356,10 @@
     </div>
   </div>
 
-  <!-- LIVE CUSTOMIZER DRAWER -->
-  <div id="customizerBackdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
-
-  <aside id="customizerDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md z-50 glass-header bg-black/90 border-l border-white/10 drawer-transition transform translate-x-full flex flex-col shadow-2xl">
-    <div class="p-6 border-b border-white/10 flex items-center justify-between bg-black/50">
-      <div class="flex items-center gap-2">
-        <i data-lucide="sliders" class="w-5 h-5 text-appleBlue"></i>
-        <h3 class="font-bold text-white text-lg">Portfolio Customizer</h3>
-      </div>
-      <button id="closeCustomizerBtn" class="glass-pill p-2 rounded-full text-zinc-400 hover:text-white transition-colors">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-    </div>
-
-    <div class="flex border-b border-white/10 bg-black/30">
-      <button id="tabProfileBtn" class="flex-1 py-3 text-xs font-semibold text-appleBlue border-b-2 border-appleBlue transition-colors">
-        Profile Info
-      </button>
-      <button id="tabProjectsBtn" class="flex-1 py-3 text-xs font-semibold text-zinc-400 border-b-2 border-transparent hover:text-white transition-colors">
-        Manage Projects
-      </button>
-    </div>
-
-    <div class="p-6 flex-1 overflow-y-auto space-y-6">
-      <div id="tabProfileContent" class="space-y-4">
-        <div>
-          <label class="block text-xs font-medium text-zinc-400 mb-1">Name</label>
-          <input type="text" id="inputName" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue">
-        </div>
-
-        <div>
-          <label class="block text-xs font-medium text-zinc-400 mb-1">Status Badge Text</label>
-          <input type="text" id="inputStatus" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue">
-        </div>
-
-        <div>
-          <label class="block text-xs font-medium text-zinc-400 mb-1">Hero Bio</label>
-          <textarea id="inputBio" rows="3" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue"></textarea>
-        </div>
-
-        <div>
-          <label class="block text-xs font-medium text-zinc-400 mb-1">About Text</label>
-          <textarea id="inputAboutBio" rows="3" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue"></textarea>
-        </div>
-
-        <div>
-          <label class="block text-xs font-medium text-zinc-400 mb-1">Email</label>
-          <input type="email" id="inputEmail" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue">
-        </div>
-      </div>
-
-      <div id="tabProjectsContent" class="space-y-6 hidden">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-medium text-zinc-400">Projects List</span>
-          <button id="addNewProjectBtn" class="px-3 py-1.5 rounded-full bg-appleBlue text-white text-xs font-medium hover:bg-blue-600 transition-colors flex items-center gap-1">
-            <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-            <span>Add Project</span>
-          </button>
-        </div>
-
-        <div id="drawerProjectsList" class="space-y-3">
-        </div>
-      </div>
-    </div>
-
-    <div class="p-6 border-t border-white/10 bg-black/60 space-y-3">
-      <button id="saveCustomizerBtn" class="w-full py-2.5 rounded-xl bg-appleBlue text-white font-medium text-xs hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-appleBlue/20">
-        <i data-lucide="save" class="w-4 h-4"></i>
-        <span>Save Changes Live</span>
-      </button>
-
-      <div class="flex items-center gap-2">
-        <button id="resetDemoDataBtn" class="flex-1 py-2 rounded-xl glass-pill text-zinc-400 hover:text-white text-xs font-medium transition-colors border border-white/10">
-          Reset Data
-        </button>
-        <button id="copyCodeConfigBtn" class="flex-1 py-2 rounded-xl glass-pill text-zinc-400 hover:text-white text-xs font-medium transition-colors border border-white/10 flex items-center justify-center gap-1">
-          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-          <span>Copy Config</span>
-        </button>
-      </div>
-    </div>
-  </aside>
-
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    const initialPortfolioData = {
-      profile: {
-        name: "Yash",
-        status: "College Student & Web Developer",
-        bio: "I am a college student who loves building web applications. So far, I have developed 2 web projects focused on real-world use cases.",
-        aboutBio: "I am a college student passionate about web development. Currently, I have developed 2 projects: Roomzy, a platform to find student housing without brokerage, and Email Threat Detection, a web security tool for analyzing email threats. I aim to create simple, clean, and useful websites.",
-        email: "yash@example.com"
-      },
+    const portfolioData = {
+      email: "yash@example.com",
       categories: ["All", "Web App", "Security"],
       projects: [
         {
@@ -470,7 +367,7 @@
           title: "Roomzy",
           category: "Web App",
           description: "A student housing platform built to find verified PGs, hostels, and co-living spaces without brokerage fees.",
-          image: "image_7e471a.jpg",
+          image: "roomzy.png",
           features: [
             "Find verified student PGs and co-living stays",
             "Zero brokerage fee housing search",
@@ -484,7 +381,7 @@
           title: "Email Threat Detection",
           category: "Security",
           description: "An email security platform built to quarantine incoming emails, analyze headers, and trace threats back to their origin.",
-          image: "image_7e46da.jpg",
+          image: "email.png",
           features: [
             "Analyzes raw MIME artifacts & headers",
             "Real-time threat score assessment",
@@ -496,27 +393,8 @@
       ]
     };
 
-    let appState = loadStateFromLocalStorage() || JSON.parse(JSON.stringify(initialPortfolioData));
     let activeCategory = "All";
     let searchQuery = "";
-    let activeEditTab = "profile";
-
-    function saveStateToLocalStorage() {
-      try {
-        localStorage.setItem("yash_portfolio_clean_v2", JSON.stringify(appState));
-      } catch (e) {
-        console.warn("Local storage write failed:", e);
-      }
-    }
-
-    function loadStateFromLocalStorage() {
-      try {
-        const saved = localStorage.getItem("yash_portfolio_clean_v2");
-        return saved ? JSON.parse(saved) : null;
-      } catch (e) {
-        return null;
-      }
-    }
 
     function showToast(message, isError = false) {
       const toast = document.getElementById("toast");
@@ -567,16 +445,8 @@
     }
 
     function renderApp() {
-      document.getElementById("navBrandName").textContent = appState.profile.name;
-      document.getElementById("heroStatusText").textContent = appState.profile.status;
-      document.getElementById("heroBio").textContent = appState.profile.bio;
-      document.getElementById("aboutBioExtended").textContent = appState.profile.aboutBio;
-      document.getElementById("footerName").textContent = appState.profile.name;
-
       renderCategoryFilters();
       renderProjectsGrid();
-      populateCustomizerFields();
-
       lucide.createIcons();
     }
 
@@ -584,7 +454,7 @@
       const container = document.getElementById("categoryFilterContainer");
       container.innerHTML = "";
 
-      appState.categories.forEach(category => {
+      portfolioData.categories.forEach(category => {
         const isActive = activeCategory === category;
         const btn = document.createElement("button");
         btn.className = `px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
@@ -609,7 +479,7 @@
       
       grid.innerHTML = "";
 
-      const filtered = appState.projects.filter(project => {
+      const filtered = portfolioData.projects.filter(project => {
         const matchesCategory = activeCategory === "All" || project.category === activeCategory;
         const query = searchQuery.toLowerCase().trim();
         const matchesSearch = !query || 
@@ -733,60 +603,6 @@
       modalCard.classList.add("scale-95");
     }
 
-    function populateCustomizerFields() {
-      document.getElementById("inputName").value = appState.profile.name;
-      document.getElementById("inputStatus").value = appState.profile.status;
-      document.getElementById("inputBio").value = appState.profile.bio;
-      document.getElementById("inputAboutBio").value = appState.profile.aboutBio;
-      document.getElementById("inputEmail").value = appState.profile.email;
-
-      renderDrawerProjectsList();
-    }
-
-    function renderDrawerProjectsList() {
-      const container = document.getElementById("drawerProjectsList");
-      container.innerHTML = "";
-
-      appState.projects.forEach((proj, idx) => {
-        const item = document.createElement("div");
-        item.className = "glass-pill p-3 rounded-2xl border border-white/10 space-y-2 bg-black/40";
-        item.innerHTML = `
-          <div class="flex items-center justify-between">
-            <span class="font-semibold text-xs text-white">${escapeHtml(proj.title)}</span>
-            <button class="delete-proj-btn text-red-400 hover:text-red-300 p-1" title="Delete Project">
-              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-
-          <div class="space-y-2 pt-1">
-            <input type="text" value="${escapeHtml(proj.title)}" data-idx="${idx}" data-field="title" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Title">
-            <input type="text" value="${escapeHtml(proj.category)}" data-idx="${idx}" data-field="category" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Category">
-            <textarea data-idx="${idx}" data-field="description" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" rows="2" placeholder="Description">${escapeHtml(proj.description)}</textarea>
-            <input type="text" value="${escapeHtml(proj.image)}" data-idx="${idx}" data-field="image" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Image Filename/URL">
-            <input type="url" value="${escapeHtml(proj.liveUrl)}" data-idx="${idx}" data-field="liveUrl" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Project Link">
-          </div>
-        `;
-
-        item.querySelector(".delete-proj-btn").addEventListener("click", () => {
-          appState.projects.splice(idx, 1);
-          renderDrawerProjectsList();
-          showToast("Project removed");
-        });
-
-        container.appendChild(item);
-      });
-
-      container.querySelectorAll(".proj-input").forEach(input => {
-        input.addEventListener("input", (e) => {
-          const idx = parseInt(e.target.getAttribute("data-idx"));
-          const field = e.target.getAttribute("data-field");
-          appState.projects[idx][field] = e.target.value;
-        });
-      });
-
-      lucide.createIcons();
-    }
-
     function escapeHtml(str) {
       if (!str) return '';
       return str.replace(/[&<>"']/g, function(m) {
@@ -814,7 +630,7 @@
         renderProjectsGrid();
       });
 
-      const handleEmailCopy = () => copyTextToClipboard(appState.profile.email, "Email copied!");
+      const handleEmailCopy = () => copyTextToClipboard(portfolioData.email, "Email copied!");
       document.getElementById("copyEmailBtn").addEventListener("click", handleEmailCopy);
       document.getElementById("footerEmailBtn").addEventListener("click", handleEmailCopy);
 
@@ -825,85 +641,6 @@
       document.getElementById("closeModalBtn").addEventListener("click", closeModal);
       document.getElementById("projectModal").addEventListener("click", (e) => {
         if (e.target.id === "projectModal") closeModal();
-      });
-
-      const drawer = document.getElementById("customizerDrawer");
-      const backdrop = document.getElementById("customizerBackdrop");
-
-      const openDrawer = () => {
-        drawer.classList.remove("translate-x-full");
-        backdrop.classList.remove("opacity-0", "pointer-events-none");
-      };
-
-      const closeDrawer = () => {
-        drawer.classList.add("translate-x-full");
-        backdrop.classList.add("opacity-0", "pointer-events-none");
-      };
-
-      document.getElementById("openCustomizerBtn").addEventListener("click", openDrawer);
-      document.getElementById("closeCustomizerBtn").addEventListener("click", closeDrawer);
-      backdrop.addEventListener("click", closeDrawer);
-
-      const tabProfileBtn = document.getElementById("tabProfileBtn");
-      const tabProjectsBtn = document.getElementById("tabProjectsBtn");
-      const tabProfileContent = document.getElementById("tabProfileContent");
-      const tabProjectsContent = document.getElementById("tabProjectsContent");
-
-      tabProfileBtn.addEventListener("click", () => {
-        activeEditTab = "profile";
-        tabProfileBtn.className = "flex-1 py-3 text-xs font-semibold text-appleBlue border-b-2 border-appleBlue transition-colors";
-        tabProjectsBtn.className = "flex-1 py-3 text-xs font-semibold text-zinc-400 border-b-2 border-transparent hover:text-white transition-colors";
-        tabProfileContent.classList.remove("hidden");
-        tabProjectsContent.classList.add("hidden");
-      });
-
-      tabProjectsBtn.addEventListener("click", () => {
-        activeEditTab = "projects";
-        tabProjectsBtn.className = "flex-1 py-3 text-xs font-semibold text-appleBlue border-b-2 border-appleBlue transition-colors";
-        tabProfileBtn.className = "flex-1 py-3 text-xs font-semibold text-zinc-400 border-b-2 border-transparent hover:text-white transition-colors";
-        tabProjectsContent.classList.remove("hidden");
-        tabProfileContent.classList.add("hidden");
-      });
-
-      document.getElementById("addNewProjectBtn").addEventListener("click", () => {
-        const newProj = {
-          id: "p_" + Date.now(),
-          title: "New Project",
-          category: "Web App",
-          description: "A new project built for practical web applications.",
-          image: "image_7e471a.jpg",
-          features: ["Feature highlight 1", "Feature highlight 2"],
-          tags: ["Web App", "JavaScript"],
-          liveUrl: "https://example.com"
-        };
-        appState.projects.unshift(newProj);
-        renderDrawerProjectsList();
-        showToast("New project added");
-      });
-
-      document.getElementById("saveCustomizerBtn").addEventListener("click", () => {
-        appState.profile.name = document.getElementById("inputName").value;
-        appState.profile.status = document.getElementById("inputStatus").value;
-        appState.profile.bio = document.getElementById("inputBio").value;
-        appState.profile.aboutBio = document.getElementById("inputAboutBio").value;
-        appState.profile.email = document.getElementById("inputEmail").value;
-
-        saveStateToLocalStorage();
-        renderApp();
-        closeDrawer();
-        showToast("Portfolio updated!");
-      });
-
-      document.getElementById("resetDemoDataBtn").addEventListener("click", () => {
-        appState = JSON.parse(JSON.stringify(initialPortfolioData));
-        saveStateToLocalStorage();
-        renderApp();
-        showToast("Reset to initial data");
-      });
-
-      document.getElementById("copyCodeConfigBtn").addEventListener("click", () => {
-        const jsonStr = JSON.stringify(appState, null, 2);
-        copyTextToClipboard(jsonStr, "Portfolio JSON copied!");
       });
     }
 
