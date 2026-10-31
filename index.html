@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Projects | Developer Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #000000;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(255, 255, 255, 0.2);
+      --text-primary: #f5f5f7;
+      --text-secondary: #86868b;
+      --accent-blue: #2997ff;
+      --accent-glow: rgba(41, 151, 255, 0.15);
+      --glass-nav: rgba(0, 0, 0, 0.75);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Ambient Background Glow */
+    .glow-bg {
+      position: fixed;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(41, 151, 255, 0.12) 0%, rgba(0,0,0,0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 52px;
+      background: var(--glass-nav);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 1000;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-brand span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #30d158;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Hero Section */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 1.5rem 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-weight: 400;
+    }
+
+    /* Filter & Search Bar */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .search-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      outline: none;
+      width: 220px;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-blue);
+    }
+
+    /* Grid Layout */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Project Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+    }
+
+    .card-preview {
+      width: 100%;
+      height: 200px;
+      background: #151516;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .card-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-preview img {
+      transform: scale(1.04);
+    }
+
+    .card-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card-description {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0077ed;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: #161617;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      padding: 2rem;
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      margin-top: 5rem;
+    }
+
+    footer a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-bg"></div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#" class="nav-brand">
+      <span></span> Your Name
+    </a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://vercel.com" target="_blank">Deployed on Vercel</a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="hero-badge">⚡ Deployed via Vercel & GitHub</div>
+      <h1>Web Engineering & Projects</h1>
+      <p>A curated showcase of modern web applications, interactive UIs, and full-stack software.</p>
+    </header>
+
+    <!-- Filters and Search -->
+    <div class="controls" id="projects">
+      <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+        <button class="filter-btn" onclick="filterProjects('frontend', this)">Frontend</button>
+        <button class="filter-btn" onclick="filterProjects('fullstack', this)">Full Stack</button>
+        <button class="filter-btn" onclick="filterProjects('ui', this)">UI/UX</button>
+      </div>
+      <input type="text" class="search-input" id="search" placeholder="Search projects..." oninput="searchProjects()">
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid" id="projectsGrid">
+      
+      <!-- Project 1 -->
+      <article class="card" data-category="fullstack" data-title="ai SaaS platform" onclick="openModal('AI SaaS Platform', 'A sleek dashboard built with Next.js, OpenAI API, and Stripe integration.', ['Next.js', 'TypeScript', 'Tailwind'], 'https://github.com/yourusername/project-one', 'https://project-one.vercel.app')">
+        <div class="card-preview">
+          <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="card-content">
+          <div class="card-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind</span>
+          </div>
+          <h2 class="card-title">AI Content SaaS</h2>
+          <p class="card-description">Generative AI toolkit with user authentication, usage limits, and subscription tiers.</p>
+          <div class="card-actions">
+            <span class="btn btn-primary">View Details</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card" data-category="frontend" data-title="apple store clone" onclick="openModal('Apple Store Concept', 'Pixel-perfect store interface featuring custom WebGL animations and dynamic shopping cart.', ['React', 'Three.js', 'CSS Modules'], 'https://github.com/yourusername/apple-clone', 'https://apple-clone.vercel.app')">
+        <div class="card-preview">
+          <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div class="card-content">
+          <div class="card-tags">
+            <span class="tag">React</span>
+            <span class="tag">Three.js</span>
+            <span class="tag">Framer Motion</span>
+          </div>
+          <h2 class="card-title">Apple Interactive Store</h2>
+          <p class="card-description">Interactive product customizer with smooth 3D render previews and spatial UI animations.</p>
+          <div class="card-actions">
+            <span class="btn btn-primary">View Details</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card" data-category="ui" data-title="realtime chat app" onclick="openModal('Realtime Workspace Chat', 'High-performance team messaging app built with WebSocket and Redis.', ['Vue.js', 'Node.js', 'Socket.io'], 'https://github.com/yourusername/chat-app', 'https://chat-app.vercel.app')">
+        <div class="card-preview">
+          <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.3)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <div class="card-content">
+          <div class="card-tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Socket.io</span>
+          </div>
+          <h2 class="card-title">Realtime Messaging Hub</h2>
+          <p class="card-description">Instant messaging interface with channel support, markdown rendering, and file sharing.</p>
+          <div class="card-actions">
+            <span class="btn btn-primary">View Details</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Your Name. Code hosted on <a href="https://github.com" target="_blank">GitHub</a> and served via <a href="https://vercel.com" target="_blank">Vercel</a>.</p>
+    </footer>
+
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="projectModal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      <h2 id="modalTitle" style="margin-bottom: 0.5rem; font-size: 1.5rem;">Project Title</h2>
+      <p id="modalDesc" style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;"></p>
+      <div id="modalTags" class="card-tags" style="margin-bottom: 1.5rem;"></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a id="modalLive" href="#" target="_blank" class="btn btn-primary">Live Preview ↗</a>
+        <a id="modalGithub" href="#" target="_blank" class="btn btn-secondary">GitHub Repo ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Filter Functionality
+    function filterProjects(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Search Functionality
+    function searchProjects() {
+      const query = document.getElementById('search').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.dataset.title.toLowerCase();
+        const desc = card.querySelector('.card-description').innerText.toLowerCase();
+        if (title.includes(query) || desc.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Logic
+    function openModal(title, desc, tags, github, live) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      
+      const tagsContainer = document.getElementById('modalTags');
+      tagsContainer.innerHTML = '';
+      tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.innerText = t;
+        tagsContainer.appendChild(span);
+      });
+
+      document.getElementById('modalGithub').href = github;
+      document.getElementById('modalLive').href = live;
+
+      document.getElementById('projectModal').classList.add('active');
+    }
+
+    function closeModal(e) {
+      if (e.target.id === 'projectModal') {
+        document.getElementById('projectModal').classList.remove('active');
+      }
+    }
+
+    function closeModalDirect() {
+      document.getElementById('projectModal').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
