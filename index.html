@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Yash — Web Developer Portfolio</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Tailwind Configuration for Apple Fonts & Theme -->
+  <!-- Tailwind Configuration for Apple Fonts & Custom Colors -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -43,7 +43,7 @@
     }
   </script>
 
-  <!-- Custom Styling for Apple Dark Theme & Glassmorphism -->
+  <!-- Custom Styling for Glassmorphism & Apple Theme -->
   <style>
     body {
       background-color: #05050a;
@@ -120,12 +120,12 @@
 </head>
 <body class="relative min-h-screen selection:bg-appleBlue/30 selection:text-white">
 
-  <!-- Ambient Glow Orbs -->
+  <!-- Ambient Light Background -->
   <div class="fixed top-[-10%] left-[20%] w-[500px] h-[500px] bg-appleBlue/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
   <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] bg-applePurple/10 rounded-full blur-[160px] pointer-events-none z-0"></div>
   <div class="fixed bottom-[-10%] left-[30%] w-[500px] h-[500px] bg-appleCyan/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
 
-  <!-- Background Grid Pattern -->
+  <!-- Background Grid -->
   <div class="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none z-0"></div>
 
   <!-- Toast Notification System -->
@@ -154,7 +154,7 @@
 
       <!-- Navigation Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-        <a href="#projects" class="hover:text-white transition-colors">Web Projects</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
         <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </nav>
@@ -181,23 +181,23 @@
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
         </span>
-        <span id="heroStatusText">Building interactive web projects</span>
+        <span id="heroStatusText">College Student & Web Developer</span>
       </div>
 
       <!-- Main Headline -->
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] apple-title-gradient">
-        Building modern <span class="apple-accent-gradient">web applications</span> with speed & clarity.
+        Building simple & functional <span class="apple-accent-gradient">web projects</span>.
       </h1>
 
       <!-- Bio Paragraph -->
       <p id="heroBio" class="text-lg md:text-xl text-zinc-400 leading-relaxed font-normal max-w-2xl">
-        Web developer focused on creating functional, responsive web applications designed for seamless user experience.
+        I am a college student who loves building web applications. So far, I have developed 2 web projects focused on real-world use cases.
       </p>
 
       <!-- Action CTAs -->
       <div class="flex flex-wrap items-center gap-4 pt-2">
         <a href="#projects" class="px-6 py-3 rounded-full bg-appleBlue text-white font-medium text-sm hover:bg-blue-600 transition-all shadow-lg shadow-appleBlue/25 flex items-center gap-2">
-          <span>Explore Projects</span>
+          <span>View Projects</span>
           <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
         
@@ -211,19 +211,19 @@
     <!-- WEB PROJECTS SHOWCASE SECTION -->
     <section id="projects" class="space-y-8 scroll-mt-24">
       
-      <!-- Section Header & Filter Controls -->
+      <!-- Section Header & Controls -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2 border-b border-white/[0.08]">
         <div>
           <div class="flex items-center gap-3">
-            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white">Web Projects</h2>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white">My Projects</h2>
             <span id="projectCountBadge" class="glass-pill text-xs font-semibold px-2.5 py-0.5 rounded-full text-appleBlue">
               2 Projects
             </span>
           </div>
-          <p class="text-zinc-400 text-sm mt-1">Explore featured web applications built for real-world usability.</p>
+          <p class="text-zinc-400 text-sm mt-1">Explore the web applications I have created so far.</p>
         </div>
 
-        <!-- Search & Filter Toolbar -->
+        <!-- Search & Category Filters -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div class="relative">
             <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500"></i>
@@ -267,23 +267,23 @@
           <span>About Yash</span>
         </div>
         <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
-          Focused on building clean, responsive, and functional web applications.
+          A college student building web applications.
         </h2>
         <p id="aboutBioExtended" class="text-zinc-300 text-sm leading-relaxed">
-          I build web applications designed for performance and simple usability. Every project is designed to be accessible, responsive across devices, and built with clean web standards.
+          I am a college student passionate about web development. Currently, I have developed 2 projects: Roomzy, a platform to find student housing without brokerage, and Email Threat Detection, a web security tool for analyzing email threats. I aim to create simple, clean, and useful websites.
         </p>
         <div class="pt-2 flex flex-wrap gap-4 text-xs font-medium text-zinc-400">
           <div class="flex items-center gap-1.5">
             <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Interactive Applications</span>
+            <span>College Student</span>
           </div>
           <div class="flex items-center gap-1.5">
             <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Apple Dark Aesthetic</span>
+            <span>2 Developed Projects</span>
           </div>
           <div class="flex items-center gap-1.5">
             <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Mobile-First Responsive</span>
+            <span>Clean Web Design</span>
           </div>
         </div>
       </div>
@@ -300,7 +300,7 @@
           <span class="text-zinc-600">•</span>
           <span class="text-xs text-zinc-400">Web Developer Portfolio</span>
         </div>
-        <p class="text-xs text-zinc-500">Apple dark aesthetic web projects portfolio.</p>
+        <p class="text-xs text-zinc-500">Dark aesthetic web portfolio.</p>
       </div>
 
       <div class="flex items-center gap-4 text-xs font-medium text-zinc-400">
@@ -334,9 +334,9 @@
 
       <!-- Modal Body -->
       <div class="p-6 space-y-6 overflow-y-auto custom-scrollbar">
-        <!-- Image Preview Container -->
+        <!-- Interface Screenshot Preview -->
         <div class="rounded-2xl border border-white/10 overflow-hidden bg-zinc-950 aspect-video relative">
-          <img id="modalImage" src="" alt="Project interface preview" class="w-full h-full object-cover">
+          <img id="modalImage" src="" alt="Project screenshot preview" class="w-full h-full object-cover">
         </div>
 
         <!-- Description -->
@@ -345,7 +345,7 @@
           <p id="modalDescription" class="text-zinc-300 text-sm leading-relaxed">Description...</p>
         </div>
 
-        <!-- Key Highlights -->
+        <!-- Highlights -->
         <div>
           <h4 class="text-xs uppercase tracking-wider font-semibold text-zinc-400 mb-2">Key Highlights</h4>
           <ul id="modalFeatures" class="space-y-2 text-xs text-zinc-300">
@@ -363,7 +363,7 @@
       <!-- Modal Footer -->
       <div class="p-6 border-t border-white/10 flex items-center justify-end gap-3 bg-black/40">
         <a id="modalLiveBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-appleBlue hover:bg-blue-600 text-white text-xs font-medium transition-colors flex items-center gap-2 shadow-lg shadow-appleBlue/20">
-          <span>Open Live Application</span>
+          <span>Live</span>
           <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
       </div>
@@ -458,9 +458,9 @@
     const initialPortfolioData = {
       profile: {
         name: "Yash",
-        status: "Building interactive web projects",
-        bio: "Web developer focused on creating clean, practical, and responsive web applications.",
-        aboutBio: "I specialize in building web applications that combine clean layout standards with smooth UI interactions. Every project is focused on user experience, speed, and real-world utility.",
+        status: "College Student & Web Developer",
+        bio: "I am a college student who loves building web applications. So far, I have developed 2 web projects focused on real-world use cases.",
+        aboutBio: "I am a college student passionate about web development. Currently, I have developed 2 projects: Roomzy, a platform to find student housing without brokerage, and Email Threat Detection, a web security tool for analyzing email threats. I aim to create simple, clean, and useful websites.",
         email: "yash@example.com"
       },
       categories: ["All", "Web App", "Security"],
@@ -469,28 +469,28 @@
           id: "p1",
           title: "Roomzy",
           category: "Web App",
-          description: "A modern web application designed for searching, browsing, and managing room listings with an intuitive interactive UI.",
-          image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTaavBq3o1gFeqWKGnoKdDud_JJUt1oR13MNmvH1T_lYT-J-gHObIbpiqpa_QrHCYzUEnpPfgppANjCvOc",
+          description: "A student housing platform built to find verified PGs, hostels, and co-living spaces without brokerage fees.",
+          image: "image_7e471a.jpg",
           features: [
-            "Dark aesthetic user interface design",
-            "Calendar & booking listing preview",
-            "Responsive layout across all devices"
+            "Find verified student PGs and co-living stays",
+            "Zero brokerage fee housing search",
+            "Clean student-friendly web interface"
           ],
-          tags: ["Web App", "JavaScript", "Responsive Design", "UI/UX"],
+          tags: ["Web App", "Housing", "Student Living"],
           liveUrl: "https://nsp-blue.vercel.app/"
         },
         {
           id: "p2",
           title: "Email Threat Detection",
           category: "Security",
-          description: "An intelligent web application built to analyze email content patterns and identify potential phishing or security threats in real-time.",
-          image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTCOwQhlJakfqI88bOW1aul9NoKt0l34FlxXdXTDzQ21-wbFJMgAYNwVIsKDJmbqKOrVFhy9xrq64Qr8WU",
+          description: "An email security platform built to quarantine incoming emails, analyze headers, and trace threats back to their origin.",
+          image: "image_7e46da.jpg",
           features: [
-            "Phishing & malicious threat detection",
-            "Risk score dashboard visual indicators",
-            "Fast interactive analysis interface"
+            "Analyzes raw MIME artifacts & headers",
+            "Real-time threat score assessment",
+            "Trace incoming mail back to origin"
           ],
-          tags: ["Web Security", "Phishing Detection", "Dashboard", "JavaScript"],
+          tags: ["Web Security", "Email Detection", "Threat Analysis"],
           liveUrl: "https://phish-phinder.vercel.app/"
         }
       ]
@@ -503,7 +503,7 @@
 
     function saveStateToLocalStorage() {
       try {
-        localStorage.setItem("yash_portfolio_clean_state", JSON.stringify(appState));
+        localStorage.setItem("yash_portfolio_clean_v2", JSON.stringify(appState));
       } catch (e) {
         console.warn("Local storage write failed:", e);
       }
@@ -511,7 +511,7 @@
 
     function loadStateFromLocalStorage() {
       try {
-        const saved = localStorage.getItem("yash_portfolio_clean_state");
+        const saved = localStorage.getItem("yash_portfolio_clean_v2");
         return saved ? JSON.parse(saved) : null;
       } catch (e) {
         return null;
@@ -634,17 +634,17 @@
 
         card.innerHTML = `
           <div class="space-y-4">
-            <!-- Project Interface Image -->
+            <!-- Project Image Preview -->
             <div class="rounded-2xl border border-white/10 overflow-hidden bg-zinc-950 aspect-video relative group">
               <img 
                 src="${escapeHtml(project.image)}" 
-                alt="${escapeHtml(project.title)} Interface" 
+                alt="${escapeHtml(project.title)} Screenshot" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
               <span class="absolute bottom-3 left-3 glass-pill text-[10px] font-semibold px-2.5 py-1 rounded-full text-white flex items-center gap-1">
                 <i data-lucide="layout" class="w-3 h-3 text-appleBlue"></i>
-                Web Interface
+                Project Preview
               </span>
             </div>
 
@@ -679,7 +679,7 @@
             </button>
 
             <a href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer" class="glass-pill px-4 py-2 rounded-full text-xs font-medium text-white bg-appleBlue/80 hover:bg-appleBlue transition-all flex items-center gap-1.5 shadow-md shadow-appleBlue/20">
-              <span>Live Demo</span>
+              <span>Live</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -762,8 +762,8 @@
             <input type="text" value="${escapeHtml(proj.title)}" data-idx="${idx}" data-field="title" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Title">
             <input type="text" value="${escapeHtml(proj.category)}" data-idx="${idx}" data-field="category" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Category">
             <textarea data-idx="${idx}" data-field="description" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" rows="2" placeholder="Description">${escapeHtml(proj.description)}</textarea>
-            <input type="text" value="${escapeHtml(proj.image)}" data-idx="${idx}" data-field="image" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Interface Image URL">
-            <input type="url" value="${escapeHtml(proj.liveUrl)}" data-idx="${idx}" data-field="liveUrl" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Project Live Link">
+            <input type="text" value="${escapeHtml(proj.image)}" data-idx="${idx}" data-field="image" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Image Filename/URL">
+            <input type="url" value="${escapeHtml(proj.liveUrl)}" data-idx="${idx}" data-field="liveUrl" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Project Link">
           </div>
         `;
 
@@ -868,10 +868,10 @@
       document.getElementById("addNewProjectBtn").addEventListener("click", () => {
         const newProj = {
           id: "p_" + Date.now(),
-          title: "New Web Project",
+          title: "New Project",
           category: "Web App",
-          description: "An interactive web application built with modern standards.",
-          image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTaavBq3o1gFeqWKGnoKdDud_JJUt1oR13MNmvH1T_lYT-J-gHObIbpiqpa_QrHCYzUEnpPfgppANjCvOc",
+          description: "A new project built for practical web applications.",
+          image: "image_7e471a.jpg",
           features: ["Feature highlight 1", "Feature highlight 2"],
           tags: ["Web App", "JavaScript"],
           liveUrl: "https://example.com"
