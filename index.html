@@ -11,7 +11,7 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Tailwind Configuration -->
+  <!-- Tailwind Configuration for Apple Fonts & Theme -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -43,7 +43,7 @@
     }
   </script>
 
-  <!-- Custom CSS for Apple Dark Design & Glassmorphism -->
+  <!-- Custom Styling for Apple Dark Theme & Glassmorphism -->
   <style>
     body {
       background-color: #05050a;
@@ -75,10 +75,10 @@
     }
 
     .glass-card:hover {
-      background: rgba(20, 22, 34, 0.8);
-      border-color: rgba(41, 151, 255, 0.3);
+      background: rgba(20, 22, 34, 0.85);
+      border-color: rgba(41, 151, 255, 0.35);
       box-shadow: 0 15px 35px -10px rgba(41, 151, 255, 0.18), 0 0 20px -5px rgba(168, 85, 247, 0.12);
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
 
     .glass-pill {
@@ -116,22 +116,16 @@
     .drawer-transition {
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    .code-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
   </style>
 </head>
 <body class="relative min-h-screen selection:bg-appleBlue/30 selection:text-white">
 
-  <!-- Ambient Light Orbs -->
+  <!-- Ambient Glow Orbs -->
   <div class="fixed top-[-10%] left-[20%] w-[500px] h-[500px] bg-appleBlue/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
   <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] bg-applePurple/10 rounded-full blur-[160px] pointer-events-none z-0"></div>
   <div class="fixed bottom-[-10%] left-[30%] w-[500px] h-[500px] bg-appleCyan/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
 
-  <!-- Background Grid -->
+  <!-- Background Grid Pattern -->
   <div class="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none z-0"></div>
 
   <!-- Toast Notification System -->
@@ -171,10 +165,6 @@
           <i data-lucide="sliders" class="w-3.5 h-3.5 text-appleBlue"></i>
           <span>Edit Portfolio</span>
         </button>
-
-        <a id="navGithubLink" href="https://github.com" target="_blank" rel="noopener noreferrer" class="glass-pill p-2 rounded-full text-zinc-300 hover:text-white hover:bg-white/10 transition-all" title="GitHub Profile">
-          <i data-lucide="github" class="w-4 h-4"></i>
-        </a>
       </div>
     </div>
   </header>
@@ -191,23 +181,23 @@
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
         </span>
-        <span id="heroStatusText">Building & deploying web projects</span>
+        <span id="heroStatusText">Building interactive web projects</span>
       </div>
 
       <!-- Main Headline -->
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] apple-title-gradient">
-        Creating modern <span class="apple-accent-gradient">web applications</span> hosted on Vercel.
+        Building modern <span class="apple-accent-gradient">web applications</span> with speed & clarity.
       </h1>
 
       <!-- Bio Paragraph -->
       <p id="heroBio" class="text-lg md:text-xl text-zinc-400 leading-relaxed font-normal max-w-2xl">
-        Web developer focused on creating functional, responsive web projects with clean code hosted publicly on GitHub and Vercel.
+        Web developer focused on creating functional, responsive web applications designed for seamless user experience.
       </p>
 
       <!-- Action CTAs -->
       <div class="flex flex-wrap items-center gap-4 pt-2">
         <a href="#projects" class="px-6 py-3 rounded-full bg-appleBlue text-white font-medium text-sm hover:bg-blue-600 transition-all shadow-lg shadow-appleBlue/25 flex items-center gap-2">
-          <span>View Web Projects</span>
+          <span>Explore Projects</span>
           <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
         
@@ -215,13 +205,6 @@
           <i data-lucide="mail" class="w-4 h-4 text-appleBlue"></i>
           <span id="emailBtnText">Copy Email</span>
         </button>
-
-        <a id="heroVercelBtn" href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="glass-pill px-4 py-3 rounded-full text-zinc-300 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2 text-xs">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 76 65">
-            <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
-          </svg>
-          <span>Vercel Deployments</span>
-        </a>
       </div>
     </section>
 
@@ -234,20 +217,20 @@
           <div class="flex items-center gap-3">
             <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white">Web Projects</h2>
             <span id="projectCountBadge" class="glass-pill text-xs font-semibold px-2.5 py-0.5 rounded-full text-appleBlue">
-              0 Projects
+              2 Projects
             </span>
           </div>
-          <p class="text-zinc-400 text-sm mt-1">Live web apps deployed on Vercel with source code on GitHub.</p>
+          <p class="text-zinc-400 text-sm mt-1">Explore featured web applications built for real-world usability.</p>
         </div>
 
-        <!-- Filters & Search Toolbar -->
+        <!-- Search & Filter Toolbar -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div class="relative">
             <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500"></i>
             <input 
               type="text" 
               id="projectSearchInput" 
-              placeholder="Search web projects..." 
+              placeholder="Search projects..." 
               class="glass-pill pl-10 pr-4 py-2 rounded-full text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-appleBlue/60 w-full sm:w-56 transition-all"
             >
           </div>
@@ -259,7 +242,7 @@
       </div>
 
       <!-- Projects Grid -->
-      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Rendered via JS -->
       </div>
 
@@ -284,23 +267,23 @@
           <span>About Yash</span>
         </div>
         <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
-          Focused on crafting clean, responsive, and useful web applications.
+          Focused on building clean, responsive, and functional web applications.
         </h2>
         <p id="aboutBioExtended" class="text-zinc-300 text-sm leading-relaxed">
-          I build web applications designed for real-world usability. Every project is maintained open-source on GitHub and published live through Vercel for instant performance and access.
+          I build web applications designed for performance and simple usability. Every project is designed to be accessible, responsive across devices, and built with clean web standards.
         </p>
         <div class="pt-2 flex flex-wrap gap-4 text-xs font-medium text-zinc-400">
           <div class="flex items-center gap-1.5">
             <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Hosted on Vercel</span>
+            <span>Interactive Applications</span>
           </div>
           <div class="flex items-center gap-1.5">
             <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
-            <span>GitHub Source Code</span>
+            <span>Apple Dark Aesthetic</span>
           </div>
           <div class="flex items-center gap-1.5">
             <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Responsive Web Design</span>
+            <span>Mobile-First Responsive</span>
           </div>
         </div>
       </div>
@@ -317,20 +300,10 @@
           <span class="text-zinc-600">•</span>
           <span class="text-xs text-zinc-400">Web Developer Portfolio</span>
         </div>
-        <p class="text-xs text-zinc-500">Dark aesthetic web portfolio. Deployed via Vercel.</p>
+        <p class="text-xs text-zinc-500">Apple dark aesthetic web projects portfolio.</p>
       </div>
 
       <div class="flex items-center gap-4 text-xs font-medium text-zinc-400">
-        <a id="footerGithub" href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>GitHub</span>
-        </a>
-        <a id="footerVercel" href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 76 65">
-            <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
-          </svg>
-          <span>Vercel</span>
-        </a>
         <button id="footerEmailBtn" class="hover:text-appleBlue transition-colors flex items-center gap-1.5">
           <i data-lucide="mail" class="w-4 h-4"></i>
           <span>Email</span>
@@ -361,21 +334,9 @@
 
       <!-- Modal Body -->
       <div class="p-6 space-y-6 overflow-y-auto custom-scrollbar">
-        <!-- Visual Mock Preview Banner -->
-        <div id="modalBanner" class="h-44 rounded-2xl p-4 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-black">
-          <div class="flex items-center justify-between z-10">
-            <div class="flex items-center gap-1.5">
-              <span class="code-dot bg-red-500/80"></span>
-              <span class="code-dot bg-yellow-500/80"></span>
-              <span class="code-dot bg-green-500/80"></span>
-            </div>
-            <span class="text-[10px] font-mono text-zinc-400 glass-pill px-2.5 py-0.5 rounded-full">vercel.app</span>
-          </div>
-
-          <div class="z-10 text-center space-y-1 my-auto">
-            <p id="modalBannerSubtitle" class="text-xs font-mono text-appleBlue">web application</p>
-            <h4 id="modalBannerTitle" class="text-2xl font-bold text-white tracking-tight">Project Live Preview</h4>
-          </div>
+        <!-- Image Preview Container -->
+        <div class="rounded-2xl border border-white/10 overflow-hidden bg-zinc-950 aspect-video relative">
+          <img id="modalImage" src="" alt="Project interface preview" class="w-full h-full object-cover">
         </div>
 
         <!-- Description -->
@@ -384,16 +345,16 @@
           <p id="modalDescription" class="text-zinc-300 text-sm leading-relaxed">Description...</p>
         </div>
 
-        <!-- Highlights -->
+        <!-- Key Highlights -->
         <div>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-zinc-400 mb-2">Key Features</h4>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-zinc-400 mb-2">Key Highlights</h4>
           <ul id="modalFeatures" class="space-y-2 text-xs text-zinc-300">
           </ul>
         </div>
 
         <!-- Tags -->
         <div>
-          <h4 class="text-xs uppercase tracking-wider font-semibold text-zinc-400 mb-2">Technologies</h4>
+          <h4 class="text-xs uppercase tracking-wider font-semibold text-zinc-400 mb-2">Tags</h4>
           <div id="modalTags" class="flex flex-wrap gap-2">
           </div>
         </div>
@@ -401,15 +362,9 @@
 
       <!-- Modal Footer -->
       <div class="p-6 border-t border-white/10 flex items-center justify-end gap-3 bg-black/40">
-        <a id="modalGithubBtn" href="#" target="_blank" rel="noopener noreferrer" class="glass-pill px-4 py-2 rounded-full text-xs font-medium text-zinc-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>GitHub Code</span>
-        </a>
-        <a id="modalVercelBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-appleBlue hover:bg-blue-600 text-white text-xs font-medium transition-colors flex items-center gap-2 shadow-lg shadow-appleBlue/20">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 76 65">
-            <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
-          </svg>
-          <span>Open Live Site</span>
+        <a id="modalLiveBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full bg-appleBlue hover:bg-blue-600 text-white text-xs font-medium transition-colors flex items-center gap-2 shadow-lg shadow-appleBlue/20">
+          <span>Open Live Application</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
       </div>
     </div>
@@ -464,16 +419,6 @@
           <label class="block text-xs font-medium text-zinc-400 mb-1">Email</label>
           <input type="email" id="inputEmail" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue">
         </div>
-
-        <div>
-          <label class="block text-xs font-medium text-zinc-400 mb-1">GitHub Profile URL</label>
-          <input type="url" id="inputGithub" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue">
-        </div>
-
-        <div>
-          <label class="block text-xs font-medium text-zinc-400 mb-1">Vercel URL</label>
-          <input type="url" id="inputVercel" class="w-full glass-pill px-3.5 py-2 rounded-xl text-xs text-white focus:outline-none focus:border-appleBlue">
-        </div>
       </div>
 
       <div id="tabProjectsContent" class="space-y-6 hidden">
@@ -513,12 +458,10 @@
     const initialPortfolioData = {
       profile: {
         name: "Yash",
-        status: "Building & deploying web projects",
-        bio: "Web developer focused on creating clean, practical web applications hosted publicly on Vercel.",
-        aboutBio: "I build web applications designed for real-world usability. Every project is maintained open-source on GitHub and published live through Vercel for instant performance and access.",
-        email: "yash@example.com",
-        github: "https://github.com",
-        vercel: "https://vercel.com"
+        status: "Building interactive web projects",
+        bio: "Web developer focused on creating clean, practical, and responsive web applications.",
+        aboutBio: "I specialize in building web applications that combine clean layout standards with smooth UI interactions. Every project is focused on user experience, speed, and real-world utility.",
+        email: "yash@example.com"
       },
       categories: ["All", "Web App", "Security"],
       projects: [
@@ -526,33 +469,29 @@
           id: "p1",
           title: "Roomzy",
           category: "Web App",
-          description: "A modern web application designed for browsing, searching, and managing room listings effortlessly.",
+          description: "A modern web application designed for searching, browsing, and managing room listings with an intuitive interactive UI.",
+          image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTaavBq3o1gFeqWKGnoKdDud_JJUt1oR13MNmvH1T_lYT-J-gHObIbpiqpa_QrHCYzUEnpPfgppANjCvOc",
           features: [
-            "Clean dark-mode user interface",
-            "Interactive room listing preview",
-            "Deployed live on Vercel"
+            "Dark aesthetic user interface design",
+            "Calendar & booking listing preview",
+            "Responsive layout across all devices"
           ],
-          tags: ["Web App", "HTML/CSS", "JavaScript", "Vercel"],
-          githubUrl: "https://github.com",
-          vercelUrl: "https://nsp-blue.vercel.app/",
-          stars: 12,
-          gradient: "from-blue-600/40 via-indigo-900/40 to-black"
+          tags: ["Web App", "JavaScript", "Responsive Design", "UI/UX"],
+          liveUrl: "https://nsp-blue.vercel.app/"
         },
         {
           id: "p2",
           title: "Email Threat Detection",
           category: "Security",
-          description: "A web security tool built to analyze email content and detect phishing or malicious security threats.",
+          description: "An intelligent web application built to analyze email content patterns and identify potential phishing or security threats in real-time.",
+          image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTCOwQhlJakfqI88bOW1aul9NoKt0l34FlxXdXTDzQ21-wbFJMgAYNwVIsKDJmbqKOrVFhy9xrq64Qr8WU",
           features: [
-            "Phishing content analysis",
-            "Threat indicator detection",
-            "Fast web dashboard"
+            "Phishing & malicious threat detection",
+            "Risk score dashboard visual indicators",
+            "Fast interactive analysis interface"
           ],
-          tags: ["Web Security", "JavaScript", "Tailwind CSS", "Vercel"],
-          githubUrl: "https://github.com",
-          vercelUrl: "https://phish-phinder.vercel.app/",
-          stars: 15,
-          gradient: "from-purple-600/40 via-pink-900/40 to-black"
+          tags: ["Web Security", "Phishing Detection", "Dashboard", "JavaScript"],
+          liveUrl: "https://phish-phinder.vercel.app/"
         }
       ]
     };
@@ -564,7 +503,7 @@
 
     function saveStateToLocalStorage() {
       try {
-        localStorage.setItem("yash_portfolio_state_v1", JSON.stringify(appState));
+        localStorage.setItem("yash_portfolio_clean_state", JSON.stringify(appState));
       } catch (e) {
         console.warn("Local storage write failed:", e);
       }
@@ -572,7 +511,7 @@
 
     function loadStateFromLocalStorage() {
       try {
-        const saved = localStorage.getItem("yash_portfolio_state_v1");
+        const saved = localStorage.getItem("yash_portfolio_clean_state");
         return saved ? JSON.parse(saved) : null;
       } catch (e) {
         return null;
@@ -634,11 +573,6 @@
       document.getElementById("aboutBioExtended").textContent = appState.profile.aboutBio;
       document.getElementById("footerName").textContent = appState.profile.name;
 
-      document.getElementById("navGithubLink").href = appState.profile.github;
-      document.getElementById("heroVercelBtn").href = appState.profile.vercel;
-      document.getElementById("footerGithub").href = appState.profile.github;
-      document.getElementById("footerVercel").href = appState.profile.vercel;
-
       renderCategoryFilters();
       renderProjectsGrid();
       populateCustomizerFields();
@@ -653,7 +587,7 @@
       appState.categories.forEach(category => {
         const isActive = activeCategory === category;
         const btn = document.createElement("button");
-        btn.className = `px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+        btn.className = `px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
           isActive 
             ? "bg-appleBlue text-white shadow-md shadow-appleBlue/30" 
             : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -700,35 +634,34 @@
 
         card.innerHTML = `
           <div class="space-y-4">
-            <div class="h-36 rounded-2xl p-3 flex flex-col justify-between border border-white/10 bg-gradient-to-br ${project.gradient || 'from-blue-900/30 to-black'} relative overflow-hidden group-hover:scale-[1.01] transition-transform">
-              <div class="flex items-center justify-between z-10">
-                <div class="flex items-center gap-1.5">
-                  <span class="code-dot bg-red-500/80"></span>
-                  <span class="code-dot bg-yellow-500/80"></span>
-                  <span class="code-dot bg-green-500/80"></span>
-                </div>
-                <span class="glass-pill px-2 py-0.5 rounded-full text-[10px] text-zinc-300 font-mono flex items-center gap-1">
-                  <i data-lucide="globe" class="w-3 h-3 text-appleBlue"></i>
-                  Vercel Live
-                </span>
-              </div>
-              <div class="z-10">
-                <p class="text-[11px] font-mono text-appleBlue">web project</p>
-                <h4 class="text-xl font-bold text-white tracking-tight">${escapeHtml(project.title)}</h4>
-              </div>
+            <!-- Project Interface Image -->
+            <div class="rounded-2xl border border-white/10 overflow-hidden bg-zinc-950 aspect-video relative group">
+              <img 
+                src="${escapeHtml(project.image)}" 
+                alt="${escapeHtml(project.title)} Interface" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+              <span class="absolute bottom-3 left-3 glass-pill text-[10px] font-semibold px-2.5 py-1 rounded-full text-white flex items-center gap-1">
+                <i data-lucide="layout" class="w-3 h-3 text-appleBlue"></i>
+                Web Interface
+              </span>
             </div>
 
+            <!-- Title & Category -->
             <div class="flex items-center justify-between gap-2">
-              <h3 class="font-bold text-lg text-white group-hover:text-appleBlue transition-colors">${escapeHtml(project.title)}</h3>
+              <h3 class="font-bold text-xl text-white group-hover:text-appleBlue transition-colors">${escapeHtml(project.title)}</h3>
               <span class="glass-pill text-[11px] font-semibold px-2.5 py-0.5 rounded-full text-zinc-300 border border-white/10">
                 ${escapeHtml(project.category)}
               </span>
             </div>
 
+            <!-- Description -->
             <p class="text-xs text-zinc-400 leading-relaxed">
               ${escapeHtml(project.description)}
             </p>
 
+            <!-- Tags -->
             <div class="flex flex-wrap gap-1.5 pt-1">
               ${project.tags.map(tag => `
                 <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">
@@ -738,23 +671,17 @@
             </div>
           </div>
 
+          <!-- Card Footer Actions -->
           <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-2">
             <button class="open-modal-btn text-xs font-semibold text-appleBlue hover:text-blue-400 transition-colors flex items-center gap-1">
-              <span>Details</span>
+              <span>View Details</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
             </button>
 
-            <div class="flex items-center gap-2">
-              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="glass-pill p-2 rounded-full text-zinc-400 hover:text-white hover:bg-white/10 transition-all" title="View Source on GitHub">
-                <i data-lucide="github" class="w-4 h-4"></i>
-              </a>
-              <a href="${project.vercelUrl}" target="_blank" rel="noopener noreferrer" class="glass-pill px-3 py-1.5 rounded-full text-xs font-medium text-white bg-appleBlue/80 hover:bg-appleBlue transition-all flex items-center gap-1.5 shadow-md shadow-appleBlue/20" title="Live Preview">
-                <svg class="w-3 h-3 fill-current" viewBox="0 0 76 65">
-                  <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
-                </svg>
-                <span>Live Demo</span>
-              </a>
-            </div>
+            <a href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer" class="glass-pill px-4 py-2 rounded-full text-xs font-medium text-white bg-appleBlue/80 hover:bg-appleBlue transition-all flex items-center gap-1.5 shadow-md shadow-appleBlue/20">
+              <span>Live Demo</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         `;
 
@@ -771,11 +698,8 @@
 
       document.getElementById("modalTitle").textContent = project.title;
       document.getElementById("modalCategory").textContent = project.category;
-      document.getElementById("modalBannerTitle").textContent = project.title;
       document.getElementById("modalDescription").textContent = project.description;
-
-      const banner = document.getElementById("modalBanner");
-      banner.className = `h-44 rounded-2xl p-4 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-gradient-to-br ${project.gradient || 'from-blue-900/40 to-black'}`;
+      document.getElementById("modalImage").src = project.image;
 
       const featuresList = document.getElementById("modalFeatures");
       featuresList.innerHTML = (project.features || []).map(f => `
@@ -792,8 +716,7 @@
         </span>
       `).join('');
 
-      document.getElementById("modalGithubBtn").href = project.githubUrl;
-      document.getElementById("modalVercelBtn").href = project.vercelUrl;
+      document.getElementById("modalLiveBtn").href = project.liveUrl;
 
       lucide.createIcons();
 
@@ -816,8 +739,6 @@
       document.getElementById("inputBio").value = appState.profile.bio;
       document.getElementById("inputAboutBio").value = appState.profile.aboutBio;
       document.getElementById("inputEmail").value = appState.profile.email;
-      document.getElementById("inputGithub").value = appState.profile.github;
-      document.getElementById("inputVercel").value = appState.profile.vercel;
 
       renderDrawerProjectsList();
     }
@@ -841,11 +762,8 @@
             <input type="text" value="${escapeHtml(proj.title)}" data-idx="${idx}" data-field="title" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Title">
             <input type="text" value="${escapeHtml(proj.category)}" data-idx="${idx}" data-field="category" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Category">
             <textarea data-idx="${idx}" data-field="description" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" rows="2" placeholder="Description">${escapeHtml(proj.description)}</textarea>
-            <input type="text" value="${escapeHtml(proj.tags.join(', '))}" data-idx="${idx}" data-field="tags" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Tags">
-            <div class="flex gap-2">
-              <input type="url" value="${escapeHtml(proj.githubUrl)}" data-idx="${idx}" data-field="githubUrl" class="proj-input flex-1 glass-pill px-2 py-1 rounded-lg text-[11px] text-white" placeholder="GitHub URL">
-              <input type="url" value="${escapeHtml(proj.vercelUrl)}" data-idx="${idx}" data-field="vercelUrl" class="proj-input flex-1 glass-pill px-2 py-1 rounded-lg text-[11px] text-white" placeholder="Vercel URL">
-            </div>
+            <input type="text" value="${escapeHtml(proj.image)}" data-idx="${idx}" data-field="image" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Interface Image URL">
+            <input type="url" value="${escapeHtml(proj.liveUrl)}" data-idx="${idx}" data-field="liveUrl" class="proj-input w-full glass-pill px-2.5 py-1 rounded-lg text-xs text-white" placeholder="Project Live Link">
           </div>
         `;
 
@@ -862,11 +780,7 @@
         input.addEventListener("input", (e) => {
           const idx = parseInt(e.target.getAttribute("data-idx"));
           const field = e.target.getAttribute("data-field");
-          if (field === "tags") {
-            appState.projects[idx].tags = e.target.value.split(',').map(s => s.trim()).filter(Boolean);
-          } else {
-            appState.projects[idx][field] = e.target.value;
-          }
+          appState.projects[idx][field] = e.target.value;
         });
       });
 
@@ -956,13 +870,11 @@
           id: "p_" + Date.now(),
           title: "New Web Project",
           category: "Web App",
-          description: "A web application hosted live on Vercel.",
+          description: "An interactive web application built with modern standards.",
+          image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTaavBq3o1gFeqWKGnoKdDud_JJUt1oR13MNmvH1T_lYT-J-gHObIbpiqpa_QrHCYzUEnpPfgppANjCvOc",
           features: ["Feature highlight 1", "Feature highlight 2"],
-          tags: ["JavaScript", "Vercel"],
-          githubUrl: appState.profile.github,
-          vercelUrl: appState.profile.vercel,
-          stars: 5,
-          gradient: "from-blue-600/40 via-purple-900/40 to-black"
+          tags: ["Web App", "JavaScript"],
+          liveUrl: "https://example.com"
         };
         appState.projects.unshift(newProj);
         renderDrawerProjectsList();
@@ -975,8 +887,6 @@
         appState.profile.bio = document.getElementById("inputBio").value;
         appState.profile.aboutBio = document.getElementById("inputAboutBio").value;
         appState.profile.email = document.getElementById("inputEmail").value;
-        appState.profile.github = document.getElementById("inputGithub").value;
-        appState.profile.vercel = document.getElementById("inputVercel").value;
 
         saveStateToLocalStorage();
         renderApp();
